@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "641360251159",
+    "firebase_url": "https://gasto-com-combustivel-default-rtdb.firebaseio.com",
+    "project_id": "gasto-com-combustivel",
+    "storage_bucket": "gasto-com-combustivel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641360251159:android:81150f4820007a4c6e8f52",
+        "android_client_info": {
+          "package_name": "com.campones.gastocomcombustivel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641360251159-c6bq9uss27f3cdelg530koalkrrdekgo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.campones.gastocomcombustivel",
+            "certificate_hash": "06f416d5cb5c94906e45eef9a9078efa14e86d81"
+          }
+        },
+        {
+          "client_id": "641360251159-k9nm21gfnqkg45j7q194081i2q9uflvr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFu2i_1wPu_0Qsvy1Wa7ZSNtsEJ5Ccy4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641360251159-k9nm21gfnqkg45j7q194081i2q9uflvr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
