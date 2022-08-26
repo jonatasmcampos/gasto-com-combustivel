@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.campones.gastocomcombustivel.config.ConfiguracaoFirebase;
+import com.campones.gastocomcombustivel.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth autenticacao;
+    private Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if ( task.isSuccessful() ) {
+                    usuario = new Usuario();
+                    String usuarioID = autenticacao.getCurrentUser().getUid();
+                    usuario.setIdUsuario( usuarioID );
+                    usuario.salvar();
                     chamarConteudoActivity();
+                    finish();
                 } else {
                     Toast.makeText(MainActivity.this, "Erro ao acessar!", Toast.LENGTH_SHORT).show();
                 }
