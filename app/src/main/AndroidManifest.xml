@@ -17,6 +17,9 @@
         android:theme="@style/Theme.GastoComCombustivel"
         tools:targetApi="31">
         <activity
+            android:name=".AdicionarConsumoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConteudoActivity"
             android:exported="false" />
         <activity
