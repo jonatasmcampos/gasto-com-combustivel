@@ -13,6 +13,8 @@ import com.campones.gastocomcombustivel.model.Consumo;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.DecimalFormat;
+
 public class AdicionarConsumoActivity extends AppCompatActivity {
 
     private TextInputEditText combustivel, precoLitro, km, litros;
@@ -126,7 +128,13 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
                         qkmLitro = Double.parseDouble(textViewkmLitro.getText().toString());
                         qlitros = qkm/qkmLitro;
                         qcusto = (qprecoLitro * qlitros);
-                        salvarConsumo(qcombustivel, qkm, qlitros, qkmLitro, qcusto, qprecoLitro);
+                        DecimalFormat df = new DecimalFormat("###,##0.00");
+                        double km = Double.parseDouble(df.format(qkm));
+                        double litros = Double.parseDouble(df.format(qlitros));
+                        double kmLitro = Double.parseDouble(df.format(qkmLitro));
+                        double custo = Double.parseDouble(df.format(qcusto));
+                        double precoLitro = Double.parseDouble(df.format(qprecoLitro));
+                        salvarConsumo(qcombustivel, km, litros, kmLitro, custo, precoLitro);
                         finish();
                     }
                     if (radioButtonKmLitro.isChecked()) {

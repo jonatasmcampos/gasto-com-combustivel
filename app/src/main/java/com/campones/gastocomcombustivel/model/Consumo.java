@@ -32,7 +32,7 @@ public class Consumo {
     }
 
     public void setCombustivel(String combustivel) {
-        this.combustivel = combustivel;
+        this.combustivel = combustivel.toUpperCase();
     }
 
     public double getKm() {
