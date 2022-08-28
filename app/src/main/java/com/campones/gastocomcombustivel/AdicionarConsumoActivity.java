@@ -57,7 +57,7 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
 
     public void iniciarCalculo(){
         radioButtonLitro.setChecked(true);
-        litros.setVisibility(View.GONE);
+        tlitros.setVisibility(View.GONE);
     }
 
     public void verificarOpcao(){
@@ -65,7 +65,7 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 if(checkedId == R.id.radioButtonLitro){
-                    litros.setVisibility(View.GONE);
+                    tlitros.setVisibility(View.GONE);
                     seekBarKmLitro.setVisibility(View.VISIBLE);
                     textViewkmLitro.setVisibility(View.VISIBLE);
                     textView0.setVisibility(View.VISIBLE);
@@ -73,7 +73,7 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
                     seekBarKmLitro.setVisibility(View.GONE);
                     textViewkmLitro.setVisibility(View.GONE);
                     textView0.setVisibility(View.GONE);
-                    litros.setVisibility(View.VISIBLE);
+                    tlitros.setVisibility(View.VISIBLE);
                 }
             }
         });

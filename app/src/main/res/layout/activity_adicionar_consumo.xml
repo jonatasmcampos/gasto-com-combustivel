@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,15 +9,15 @@
 
     <TextView
         android:id="@+id/titulo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="O que deseja calcular?"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <RadioGroup
@@ -28,7 +29,6 @@
         android:layout_marginBottom="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/editTextCombustivel"
         app:layout_constraintTop_toBottomOf="@+id/titulo">
 
         <RadioButton
@@ -47,123 +47,156 @@
             android:textSize="15sp" />
     </RadioGroup>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextCombustivel"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPrecoLitro"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etCombustivel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:hint="Combustível" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextPrecoLitro"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewKmLitro"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCombustivel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/editTextCombustivel">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPrecoLitro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:hint="Preço/Litro" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textViewKmLitro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginVertical="32dp"
-        app:layout_constraintEnd_toStartOf="@id/textView0"
-        app:layout_constraintBottom_toTopOf="@+id/editTextKM"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPrecoLitro"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="KM/L"
-        android:textSize="15sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@id/textViewKmLitro"
-        app:layout_constraintTop_toTopOf="@id/textViewKmLitro"
-        app:layout_constraintEnd_toStartOf="@id/seekBarKmLitro"/>
-
-    <SeekBar
-        android:id="@+id/seekBarKmLitro"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:max="45"
-        android:progress="0"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textView0"
-        app:layout_constraintTop_toTopOf="@id/textViewKmLitro" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextKM"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSalvar"
-        app:layout_constraintTop_toBottomOf="@+id/textViewKmLitro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/editTextLitros">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etKM"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:hint="KM" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextLitros"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/editTextKM"
-        app:layout_constraintStart_toEndOf="@id/editTextKM"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etLitros"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:hint="Litros" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/buttonSalvar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:onClick="salvarConsumo"
-        android:text="SALVAR"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextKM" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        android:elevation="2dp"
+        android:background="@drawable/shape_adicionar_consumo">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextCombustivel"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/orange_light"
+            app:errorTextColor="@color/white"
+            app:hintTextColor="@color/orange_light"
+            app:layout_constraintBottom_toTopOf="@id/textViewKmLitro"
+            app:layout_constraintEnd_toStartOf="@id/editTextPrecoLitro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCombustivel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="Combustível"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextPrecoLitro"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/orange_light"
+            app:errorTextColor="@color/white"
+            app:hintTextColor="@color/orange_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/editTextCombustivel"
+            app:layout_constraintTop_toTopOf="@id/editTextCombustivel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPrecoLitro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="Preço/Litro"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textViewKmLitro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintEnd_toStartOf="@id/textView0"
+            app:layout_constraintBottom_toTopOf="@id/editTextKM"
+            app:layout_constraintTop_toBottomOf="@id/editTextCombustivel"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KM / L"
+            android:layout_marginStart="8dp"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/seekBarKmLitro"
+            app:layout_constraintTop_toTopOf="@id/textViewKmLitro"
+            app:layout_constraintStart_toEndOf="@id/textViewKmLitro"/>
+
+        <SeekBar
+            android:id="@+id/seekBarKmLitro"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:max="45"
+            android:progress="0"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintStart_toEndOf="@id/textView0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textViewKmLitro"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextKM"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="64dp"
+            app:boxStrokeColor="@color/orange_light"
+            app:errorTextColor="@color/white"
+            app:hintTextColor="@color/orange_light"
+            app:layout_constraintBottom_toTopOf="@id/fabSalvar"
+            app:layout_constraintEnd_toStartOf="@id/editTextLitros"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewKmLitro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etKM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="KM"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextLitros"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            app:boxStrokeColor="@color/orange_light"
+            app:errorTextColor="@color/white"
+            app:hintTextColor="@color/orange_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/editTextKM"
+            app:layout_constraintTop_toTopOf="@id/editTextKM">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLitros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:hint="Litros" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabSalvar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:onClick="salvarConsumo"
+                    android:contentDescription="Salvar consumo"
+                    android:src="@drawable/ic_add"
+                    app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
