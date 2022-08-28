@@ -35,14 +35,12 @@ public class AdapterConsumo extends RecyclerView.Adapter<AdapterConsumo.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Consumo consumo = consumos.get(position);
-
         holder.combustivel.setText(consumo.getCombustivel());
-        holder.km.setText(String.valueOf(consumo.getKm()));
-        holder.litros.setText(String.valueOf(consumo.getLitros()));
-        holder.kmLitro.setText(String.valueOf(consumo.getKmLitro()));
-        holder.custo.setText(String.valueOf(consumo.getCusto()));
-        holder.precoLitro.setText(String.valueOf(consumo.getPrecoLitro()));
-
+        holder.km.setText(consumo.getKm() + " km");
+        holder.litros.setText(consumo.getLitros() + " litros");
+        holder.kmLitro.setText(consumo.getKmLitro() + " km/l");
+        holder.custo.setText( "R$ " + consumo.getCusto());
+        holder.precoLitro.setText("R$ " + consumo.getPrecoLitro() + "/litro");
     }
 
 

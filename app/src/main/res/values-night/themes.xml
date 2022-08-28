@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.GastoComCombustivel" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
+        <item name="android:textColor">@color/white</item>
         <item name="colorPrimary">@color/grey_light</item>
         <item name="colorPrimaryVariant">@color/grey_dark</item>
         <item name="colorOnPrimary">@color/white</item>
