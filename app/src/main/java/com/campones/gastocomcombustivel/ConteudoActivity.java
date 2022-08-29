@@ -85,9 +85,12 @@ public class ConteudoActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 consumoList.clear();
-                if(snapshot.getChildrenCount() > 0){
+                if(!(snapshot.getChildrenCount() == 0)){
                     textView.setVisibility(View.GONE);
                     imageView.setVisibility(View.GONE);
+                } else {
+                    textView.setVisibility(View.VISIBLE);
+                    imageView.setVisibility(View.VISIBLE);
                 }
                 for (DataSnapshot dados : snapshot.getChildren()){
                     Consumo consumo = dados.getValue( Consumo.class );
