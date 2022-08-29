@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/drawable/ic_medidor_gasolina_background.xml" value="0.132" />
         <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/drawable/shape_adicionar_consumo.xml" value="0.135" />
-        <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/layout/activity_adicionar_consumo.xml" value="0.25" />
+        <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/layout/activity_adicionar_consumo.xml" value="0.22" />
         <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/layout/activity_conteudo.xml" value="0.25" />
         <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/layout/adapter_consumo.xml" value="0.20102564102564102" />
         <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/layout/adapter_movimentacao.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/layout/divider.xml" value="0.22" />
+        <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/layout/linear_layout_adicionar_consumo.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/JONATAS/AndroidStudioProjects/Gastocomcombustivel/app/src/main/res/layout/teste.xml" value="0.20416666666666666" />
       </map>
     </option>
