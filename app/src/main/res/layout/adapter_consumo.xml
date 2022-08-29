@@ -31,28 +31,28 @@
                 android:layout_height="wrap_content"
                 android:text="Combustível"
                 android:textColor="@color/white"
-                android:textSize="20sp"/>
+                android:textSize="24sp"/>
             <TextView
                 android:id="@+id/tvKM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="km"
                 android:textColor="@color/white"
-                android:textSize="18sp"/>
+                android:textSize="20sp"/>
             <TextView
                 android:id="@+id/tvLitros"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Litros"
                 android:textColor="@color/white"
-                android:textSize="18sp"/>
+                android:textSize="20sp"/>
             <TextView
                 android:id="@+id/tvKmLitro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="km / l"
                 android:textColor="@color/white"
-                android:textSize="18sp"/>
+                android:textSize="20sp"/>
 
         </LinearLayout>
 
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text="Custo"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tvPrecoLitro"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:text="Preço/Litro"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
