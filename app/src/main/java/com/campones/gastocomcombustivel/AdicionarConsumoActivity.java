@@ -57,6 +57,12 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
         verificarSeekbar();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+
     public void iniciarCalculo(){
         radioButtonLitro.setChecked(true);
         tlitros.setVisibility(View.GONE);

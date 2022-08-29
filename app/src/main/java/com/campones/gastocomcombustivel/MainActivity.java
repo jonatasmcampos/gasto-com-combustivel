@@ -32,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         verificarUsuarioLogado();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+
     public void acessar(View v){
         autenticacao.signInAnonymously().addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override

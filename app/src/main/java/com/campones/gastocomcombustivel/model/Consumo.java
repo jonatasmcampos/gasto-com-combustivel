@@ -3,6 +3,7 @@ package com.campones.gastocomcombustivel.model;
 import com.campones.gastocomcombustivel.config.ConfiguracaoFirebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
 
 public class Consumo {
 
@@ -12,6 +13,7 @@ public class Consumo {
     private double kmLitro;
     private double custo;
     private double precoLitro;
+    private String key;
 
     public Consumo() {
     }
@@ -25,6 +27,14 @@ public class Consumo {
                 .child( usuario )
                 .push()
                 .setValue( this );
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getCombustivel() {
