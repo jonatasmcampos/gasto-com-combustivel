@@ -1,8 +1,11 @@
 package com.campones.gastocomcombustivel;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -26,11 +29,17 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
     private SeekBar seekBarKmLitro;
 
     private Consumo consumo;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_consumo);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Adicionar consumo");
 
         combustivel = findViewById(R.id.etCombustivel);
         precoLitro = findViewById(R.id.etPrecoLitro);
@@ -47,6 +56,17 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
         radioButtonKmLitro = findViewById(R.id.radioButtonKmLitro);
         seekBarKmLitro = findViewById(R.id.seekBarKmLitro);
         radioGroup = findViewById(R.id.radioGroup);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -134,7 +154,7 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
                         qkmLitro = Double.parseDouble(textViewkmLitro.getText().toString());
                         qlitros = qkm/qkmLitro;
                         qcusto = (qprecoLitro * qlitros);
-                        DecimalFormat df = new DecimalFormat("###,##0.00");
+                        DecimalFormat df = new DecimalFormat("0.00");
                         double km = Double.parseDouble(df.format(qkm));
                         double litros = Double.parseDouble(df.format(qlitros));
                         double kmLitro = Double.parseDouble(df.format(qkmLitro));
@@ -148,7 +168,13 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
                             qlitros = Double.parseDouble(litros.getText().toString());
                             qkmLitro = qkm/qlitros;
                             qcusto = (qprecoLitro * qlitros);
-                            salvarConsumo(qcombustivel, qkm, qlitros, qkmLitro, qcusto, qprecoLitro);
+                            DecimalFormat df = new DecimalFormat("0.00");
+                            double km = Double.parseDouble(df.format(qkm));
+                            double litros = Double.parseDouble(df.format(qlitros));
+                            double kmLitro = Double.parseDouble(df.format(qkmLitro));
+                            double custo = Double.parseDouble(df.format(qcusto));
+                            double precoLitro = Double.parseDouble(df.format(qprecoLitro));
+                            salvarConsumo(qcombustivel, km, litros, kmLitro, custo, precoLitro);
                             finish();
                         }else{
                             tlitros.setErrorEnabled(true);
