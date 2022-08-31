@@ -40,7 +40,7 @@ public class ConteudoActivity extends AppCompatActivity {
     private DatabaseReference consumoRef;
     private ValueEventListener valueEventListenerConsumos;
 
-    private ImageView imageView;
+    private ImageView imageView, imageViewBackgroundRecycler;
     private TextView textView;
     private Toolbar toolbar;
 
@@ -55,6 +55,7 @@ public class ConteudoActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView2);
         imageView = findViewById(R.id.imageView);
+        imageViewBackgroundRecycler = findViewById(R.id.background_recycler_view);
 
         fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recyclerView);
@@ -94,9 +95,11 @@ public class ConteudoActivity extends AppCompatActivity {
                 if(!(snapshot.getChildrenCount() == 0)){
                     textView.setVisibility(View.GONE);
                     imageView.setVisibility(View.GONE);
+                    imageViewBackgroundRecycler.setVisibility(View.VISIBLE);
                 } else {
                     textView.setVisibility(View.VISIBLE);
                     imageView.setVisibility(View.VISIBLE);
+                    imageViewBackgroundRecycler.setVisibility(View.GONE);
                 }
                 for (DataSnapshot dados : snapshot.getChildren()){
                     Consumo consumo = dados.getValue( Consumo.class );
