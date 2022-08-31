@@ -23,7 +23,7 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
     private TextInputEditText combustivel, precoLitro, km, litros;
     private TextInputLayout tcombustivel, tprecoLitro, tkm, tlitros;
 
-    private TextView textViewkmLitro, textView0;
+    private TextView textViewkmLitro, textView0, textViewIconeKmLitro;
     private RadioButton radioButtonLitro, radioButtonKmLitro;
     private RadioGroup radioGroup;
     private SeekBar seekBarKmLitro;
@@ -56,6 +56,8 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
         radioButtonKmLitro = findViewById(R.id.radioButtonKmLitro);
         seekBarKmLitro = findViewById(R.id.seekBarKmLitro);
         radioGroup = findViewById(R.id.radioGroup);
+
+        textViewIconeKmLitro = findViewById(R.id.iconeKmLitro);
     }
 
     @Override
@@ -97,10 +99,12 @@ public class AdicionarConsumoActivity extends AppCompatActivity {
                     seekBarKmLitro.setVisibility(View.VISIBLE);
                     textViewkmLitro.setVisibility(View.VISIBLE);
                     textView0.setVisibility(View.VISIBLE);
+                    textViewIconeKmLitro.setVisibility(View.VISIBLE);
                 }else if(checkedId == R.id.radioButtonKmLitro){
                     seekBarKmLitro.setVisibility(View.GONE);
                     textViewkmLitro.setVisibility(View.GONE);
                     textView0.setVisibility(View.GONE);
+                    textViewIconeKmLitro.setVisibility(View.GONE);
                     tlitros.setVisibility(View.VISIBLE);
                 }
             }
